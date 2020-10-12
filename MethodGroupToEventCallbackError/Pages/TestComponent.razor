@@ -1,0 +1,16 @@
+﻿<h3>TestComponent</h3>
+@typeparam T
+@foreach (var x in TableData)
+{
+    <a @onclick="@(()=>DeleteCallback.InvokeAsync(x))"></a>
+}
+
+
+@code {
+    
+    [Parameter]
+    public List<T> TableData { get; set; }
+    
+    [Parameter]
+    public EventCallback<T> DeleteCallback { get; set; }
+}

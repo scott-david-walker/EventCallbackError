@@ -1,0 +1,27 @@
+﻿@page "/counter"
+
+<TestComponent 
+    TableData="example" 
+    DeleteCallback="@OnDelete">
+    
+</TestComponent>
+
+@code
+{
+    public class Item
+    {
+        public Guid Id { get; set; }
+    }
+
+    public List<Item> example = new List<Item>
+    {
+        new Item
+        {
+            Id = Guid.NewGuid()
+        }
+    };
+
+    public async Task OnDelete(Item item)
+    {
+    }
+}
